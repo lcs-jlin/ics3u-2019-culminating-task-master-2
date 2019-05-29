@@ -506,6 +506,69 @@ public class Mario extends Actor
 
         // Vertical position where hero no longer visible
         int offScreenVerticalPosition = (world.getHeight() + this.getImage().getHeight() / 2);
+        if (this.getY() > offScreenVerticalPosition)
+        {
+            // Remove the hero
+            isGameOver = true;
+            world.setGameOver();
+            Greenfoot.stop();
+            Greenfoot.playSound("Super Bomberman - Game Over.mp3");
+            bgSound.stop();
+            // Tell the user game is over
+            world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
+            setImage("Mario-dead.png");
+        }
+
+        if (isTouching(Cactus.class))
+        {
+            isGameOver = true;
+            world.setGameOver();
+            world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.stop();
+            bgSound.stop();
+            Greenfoot.playSound("Super Bomberman - Game Over.mp3");
+            setImage("Mario-dead.png");
+        }    
+        if (isTouching(Cactus1.class))
+        {
+            isGameOver = true;
+            world.setGameOver();
+            world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.stop();
+            bgSound.stop();
+            Greenfoot.playSound("Super Bomberman - Game Over.mp3");
+            setImage("Mario-dead.png");
+        }    
+        if (isTouching(Bird.class))
+        {
+            isGameOver = true;
+            world.setGameOver();
+            world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.stop();
+            bgSound.stop();
+            Greenfoot.playSound("Super Bomberman - Game Over.mp3");
+            setImage("Mario-dead.png");
+        }    
+        if (isTouching(Fakebird.class))
+        {
+            isGameOver = true;
+            world.setGameOver();
+            world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.stop();
+            bgSound.stop();
+            Greenfoot.playSound("Super Bomberman - Game Over.mp3");
+            setImage("Mario-dead.png");
+        }  
+        if (--timer == 0)
+        {
+            isGameOver = true;
+            world.setGameOver();
+            world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.stop();
+            bgSound.stop();
+            Greenfoot.playSound("Super Bomberman - Game Over.mp3");
+            setImage("Mario-dead.png");
+        }
 
     }
 }
