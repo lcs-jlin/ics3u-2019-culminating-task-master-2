@@ -40,9 +40,22 @@ public class SideScrollingWorld extends World
     // Track whether game is on
     private boolean isGameOver;
 
-    // Timing
-    private boolean time;
+    // Score
+    private int timer = 5000;
     
+    public void act() {
+        timer--;
+        if (timer <= 0) {
+            Greenfoot.stop(); 
+            isGameOver = true;
+            showText("GAME OVER", getWidth() / 2, getHeight() / 2);
+            
+            GreenfootSound bgSound = new GreenfootSound("Super Bomberman - Level 1.mp3");
+            bgSound.stop();
+        }
+        showText("Time:"+timer, 70, 50);
+    }
+
     /**
      * Constructor for objects of class SideScrollingWorld.
      */
@@ -58,8 +71,8 @@ public class SideScrollingWorld extends World
 
         // Game on
         isGameOver = false;
-    }
 
+    }
     /**
      * Set up the entire world.
      */
@@ -175,6 +188,7 @@ public class SideScrollingWorld extends World
             // Add the objects
             addObject(groundTile, x, y);
         }
+
     }
 
     /**
@@ -510,7 +524,6 @@ public class SideScrollingWorld extends World
         Cloud cloud3 = new Cloud(775, 50);
         addObject(cloud3, 775, 50);
     }
-
 
     /**
      * Add the hero to the world.

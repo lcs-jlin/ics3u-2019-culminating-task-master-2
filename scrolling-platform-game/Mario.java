@@ -559,16 +559,8 @@ public class Mario extends Actor
             Greenfoot.playSound("Super Bomberman - Game Over.mp3");
             setImage("Mario-dead.png");
         }  
-        if (--timer == 0)
-        {
-            isGameOver = true;
-            world.setGameOver();
-            world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
-            Greenfoot.stop();
-            bgSound.stop();
-            Greenfoot.playSound("Super Bomberman - Game Over.mp3");
-            setImage("Mario-dead.png");
-        }
+        
+        
 
     }
 }
